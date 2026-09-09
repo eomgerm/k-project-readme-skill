@@ -42,9 +42,12 @@
 # {서비스명} <a href="{앱스토어_링크}"><img src="TODO_앱_로고" align="left" width="100"/></a>
 ```
 
+스토어 링크를 못 받았으면 `<a>`를 벗기고 로고와 제목만 남긴다. 부트캠프 앱 저장소는
+미출시가 표준이라 이쪽이 오히려 흔하다.
+
 ### H4 CI 상태 뱃지 (CI 있음)
 
-배너 바로 아래 한 줄. 워크플로 파일명을 실제 파일과 맞춘다 — 틀리면 영구히 `no status`다.
+배너 바로 아래 한 줄. 워크플로 파일명을 실제 파일과 맞춘다 — 틀리면 404가 떠서 깨진 이미지로 남는다.
 
 ```markdown
 [![CI](https://github.com/{owner}/{repo}/actions/workflows/{파일명}.yml/badge.svg)](https://github.com/{owner}/{repo}/actions)

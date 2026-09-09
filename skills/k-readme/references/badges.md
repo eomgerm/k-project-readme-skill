@@ -116,8 +116,8 @@ Kotlin은 서버 표에 있다. 안드로이드 라이브러리는 로고가 없
 1. **뱃지 URL을 직접 열어 로고가 붙는지 확인한다.** slug는 브랜드명을 소문자로 붙이고
    `.`을 `dot`으로 바꾼 형태다 (`Socket.io` → `socketdotio`, `Vue.js` → `vuedotjs`).
    판정은 `curl -s "{뱃지 URL}" | grep -c '<image'` 로 한다 — `1`이면 붙었고 `0`이면 안 붙었다.
-   **응답 크기로 판정하지 않는다.** 로고 없는 뱃지도 라벨 길이와 `style`에 따라 433~998바이트로
-   변한다 (`for-the-badge` 433~480, `style` 생략 950~998).
+   **응답 크기로 판정하지 않는다.** 로고 없는 뱃지도 라벨 길이와 `style`에 따라 크기가
+   제각각이다.
 2. 붙으면 쓰고, **안 붙거나 확인이 번거로우면 `logo`와 `logoColor`를 빼고 색만 넣는다.**
    실측 185개 중 51개(28%)가 이 방식이다. 추측한 slug는 오류를 내지 않고 조용히
    로고 없는 뱃지로 렌더되기 때문에 커밋 전에 잡히지 않는다.
@@ -179,7 +179,7 @@ Kotlin은 서버 표에 있다. 안드로이드 라이브러리는 로고가 없
 ### CI 상태 뱃지
 
 `.github/workflows/`가 있을 때만. 배너 바로 아래 한 줄로 붙인다. 워크플로 파일명을 실제
-파일과 맞춘다 — 틀리면 영구히 `no status`로 뜬다.
+파일과 맞춘다 — 틀리면 404가 떠서 깨진 이미지로 남는다.
 
 ```markdown
 [![CI](https://github.com/{owner}/{repo}/actions/workflows/{파일명}.yml/badge.svg)](https://github.com/{owner}/{repo}/actions)
