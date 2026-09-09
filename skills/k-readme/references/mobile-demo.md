@@ -110,8 +110,11 @@ gifsicle -O3 --lossy=80 --colors 128 demo.gif -o demo-min.gif
 
 ## 저장 위치
 
+README를 쓰는 그 저장소 안에 둔다. 이미 이미지를 모아 둔 폴더가 있으면 거기에 맞추고,
+없으면 `docs/`를 만든다.
+
 ```
-examples/assets/
+docs/
   demo-signup.gif
   demo-feed.gif
 ```
