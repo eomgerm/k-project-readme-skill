@@ -10,7 +10,7 @@
 | `ffmpeg` | 영상 → GIF 변환. **모든 경로에 필요** | `winget install Gyan.FFmpeg` / `brew install ffmpeg` |
 | `adb` | Android 기기·에뮬레이터 녹화 | Android Studio 의 platform-tools, 또는 `winget install Google.PlatformTools` |
 | `scrcpy` | Android 미러링 + 녹화 (adb 대안, 더 편함) | `winget install Genymobile.scrcpy` / `brew install scrcpy` |
-| `gifsicle` | GIF 추가 압축 (선택) | `winget install Gifsicle.Gifsicle` / `brew install gifsicle` |
+| `gifsicle` | GIF 추가 압축 (선택) | `scoop install gifsicle` / `brew install gifsicle` (winget에는 없다) |
 
 없는 도구는 사용자에게 설치를 안내하고, 설치 없이 되는 경로(직접 녹화한 파일 변환)로 우회한다.
 
@@ -27,7 +27,7 @@ adb shell rm /sdcard/demo.mp4
 
 - `--time-limit` 최대 180초. GIF로 쓸 거면 **10~15초를 넘기지 않는다**
 - `--size 720x1560` 으로 해상도를 낮춰 두면 변환이 빨라진다
-- Android 11 미만에서는 오디오가 안 잡히는데 GIF에는 무관하다
+- `screenrecord`는 버전과 무관하게 오디오를 담지 않는다 — GIF에는 무관하다
 
 ### scrcpy 로 PC 에서 녹화
 

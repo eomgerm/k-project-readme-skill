@@ -167,7 +167,7 @@
 
 ### K1 기술 스택
 
-**표 칸에 뱃지를 넣는 혼용형이 기본이다** (19개 중 6개로 최다). 역할 칸이 있어 뱃지와
+**표 칸에 뱃지를 넣는 혼용형이 기본이다** (기술 스택 섹션이 있는 19개 중 6개로 최다). 역할 칸이 있어 뱃지와
 텍스트를 섞어도 자연스럽다. 뱃지 URL·slug·색은 `badges.md`를 읽어서 쓴다.
 
 ```markdown
@@ -282,12 +282,14 @@ cp .env.example .env
 
 | {파트} | {파트} | {파트} |
 | :---: | :---: | :---: |
-| <img src="https://avatars.githubusercontent.com/u/{ID}?v=4" width="150"/> | <img src="https://avatars.githubusercontent.com/u/{ID}?v=4" width="150"/> | <img src="https://avatars.githubusercontent.com/u/{ID}?v=4" width="150"/> |
+| <img src="{avatar_url}" width="150"/> | <img src="{avatar_url}" width="150"/> | <img src="{avatar_url}" width="150"/> |
 | [{닉네임}](https://github.com/{로그인}) | [{닉네임}](https://github.com/{로그인}) | [{닉네임}](https://github.com/{로그인}) |
 | {담당한 것} | {담당한 것} | {담당한 것} |
 ```
 
-아바타 URL은 `gh api repos/{owner}/{repo}/contributors --jq '.[] | "\(.login) \(.avatar_url)"'` 로 얻는다.
+아바타 URL은 `gh api repos/{owner}/{repo}/contributors --jq '.[] | "\(.login) \(.avatar_url)"'` 로
+얻어 **통째로 붙인다.** 담당한 것을 사용자에게 못 받았으면 그 행을 지운다 — 커밋 경로로
+추측해 채우지 않는다.
 `gh`가 없으면 이름만 채우고 아바타 행은 지운다 — `TODO`로 남기면 깨진 이미지가 줄줄이 뜬다.
 
 기여자가 1명이면 표를 쓰지 않고 한 줄로 적는다.

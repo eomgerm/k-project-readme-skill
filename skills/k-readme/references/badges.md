@@ -112,21 +112,23 @@ Kotlin은 서버 표에 있다. 안드로이드 라이브러리는 로고가 없
 
 ## 표에 없는 기술을 만났을 때
 
-1. simple-icons에 slug가 있는지 확인한다. 브랜드명을 소문자로 붙이고 `.`은 `dot`으로
-   바꾼 형태다 (`Socket.io` → `socketdotio`, `Vue.js` → `vuedotjs`).
-2. 확실하면 쓰고, **없거나 확신이 안 서면 `logo`와 `logoColor`를 빼고 색만 넣는다.**
+1. **뱃지 URL을 직접 열어 로고가 붙는지 확인한다.** slug는 브랜드명을 소문자로 붙이고
+   `.`을 `dot`으로 바꾼 형태다 (`Socket.io` → `socketdotio`, `Vue.js` → `vuedotjs`).
+   로고가 붙은 응답은 SVG 안에 `<image>`가 들어 있고 6KB 안팎, 안 붙으면 434바이트다.
+2. 붙으면 쓰고, **안 붙거나 확인이 번거로우면 `logo`와 `logoColor`를 빼고 색만 넣는다.**
    실측 185개 중 51개(28%)가 이 방식이다. 추측한 slug는 오류를 내지 않고 조용히
    로고 없는 뱃지로 렌더되기 때문에 커밋 전에 잡히지 않는다.
 3. 색을 모르면 무채색(`000000`, `555555`)으로 간다. 브랜드 색을 틀리는 것보다 낫다.
 
-**AWS·Amazon 계열과 Slack은 simple-icons에 없다.** `logo=amazonaws`, `logo=amazonwebservices`,
-`logo=slack` 은 모두 무효다. 이 셋은 반드시 색만 쓴다.
+**AWS·Amazon 계열과 Slack은 shields.io가 로고를 렌더하지 않는다.** simple-icons 패키지에는
+파일이 있지만 `logo=amazonaws`, `logo=amazonwebservices`, `logo=slack` 은 오류 없이 무시된다
+(응답이 434바이트로 로고 없는 뱃지와 같다). 이 셋은 반드시 색만 쓴다.
 
 ## 배치
 
 ### 표 칸에 넣기 (기본형)
 
-19개 중 6개가 이 형태로, 가장 흔하다. 역할 칸이 있으니 뱃지와 텍스트를 섞어도 자연스럽다.
+기술 스택 섹션이 있는 19개 중 6개가 이 형태로, 가장 흔하다. 역할 칸이 있으니 뱃지와 텍스트를 섞어도 자연스럽다.
 
 ```markdown
 | 역할 | 종류 |
