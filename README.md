@@ -1,132 +1,147 @@
-# k-project-readme-skill
+<img src="examples/assets/thumbnail.png" alt="k-readme — 부트캠프형과 동아리형 프로젝트 README 생성 스킬" width="100%"/>
 
-<img src="TODO_썸네일_이미지" alt="k-project-readme-skill" width="100%"/>
+<h1 align="center">k-readme</h1>
 
-부트캠프나 동아리 프로젝트 끝냈는데 README가 `create-next-app` 기본 문구 그대로인가요?
-발표는 끝났고 저장소만 남았는데 정작 뭘 했는지 아무 데도 안 적혀 있죠.
-이 스킬한테 시키세요. 커밋 로그와 PR을 읽어서 소개서 형태로 뽑아줍니다.
+<p align="center">
+  저장소의 코드와 이력을 읽고, 프로젝트 성격에 맞는 한국어 README를 작성합니다.<br/>
+  기술적 문제 해결은 <strong>부트캠프형</strong>으로, 서비스 경험은 <strong>동아리형</strong>으로 보여주세요.
+</p>
 
-Claude Code, Codex, Cursor, OpenCode 등 [`npx skills`](https://github.com/vercel-labs/skills)가 지원하는
-코딩 에이전트에서 씁니다. 별도 API 키나 설정 파일은 없습니다.
-
-한국 개발 문화의 README는 문서가 아니라 **소개서**입니다. 팀원 사진, 기획 배경, 성과 수치, 데모 GIF —
-영미권 README에 없는 것들이 본문의 절반을 차지합니다. 실제 부트캠프·동아리 저장소 16개를
-실측해 그 형태와 어투를 규칙으로 옮겼습니다.
-
-> **이미지는 만들어주지 않습니다.** 배너, 데모 GIF, 아키텍처 다이어그램은 사람이 채워야 합니다.
-> 이 스킬은 그 자리의 HTML 테이블까지 완성해두고 `src`만 `TODO_...`로 비워둡니다.
-> 깨져 보이는 게 의도입니다 — 미완성 README를 그대로 커밋하는 걸 막습니다.
+<p align="center">
+  <a href="https://skills.sh/"><img src="https://img.shields.io/badge/skills.sh-k--readme-111827?style=flat-square" alt="skills.sh"/></a>
+  <a href="skills/k-readme/SKILL.md"><img src="https://img.shields.io/badge/skill-SKILL.md-4C6EF5?style=flat-square&logo=markdown&logoColor=white" alt="SKILL.md"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-8B5CF6?style=flat-square" alt="MIT License"/></a>
+</p>
 
 ## 설치
 
 ```bash
-# 전역 설치 (권장)
 npx --yes skills add eomgerm/k-project-readme-skill -g
-
-# 특정 에이전트만
-npx --yes skills add eomgerm/k-project-readme-skill -g -a claude-code codex
 ```
 
-Node.js 18 이상과 `npx`만 있으면 됩니다. 팀원 아바타를 자동으로 채우려면 `gh`(GitHub CLI) 인증이
-되어 있어야 하고, 없으면 이름만 채우고 아바타 칸은 비웁니다. 모바일 데모 GIF를 만들 때만
-`ffmpeg`과 `adb`가 추가로 필요합니다.
+README를 만들 저장소에서 원하는 모드를 말하면 됩니다.
 
-## 쓰기 전에 알아둘 것
-
-**없는 사실을 만들어내지 않습니다.** 성능 수치는 커밋과 PR에 적혀 있을 때만 쓰고, 없으면
-기술적 도전 섹션 자체를 만들지 않습니다. 수치 없는 기술 서사는 홍보체가 되기 때문입니다.
-
-기존 `README.md`가 있으면 **빈 섹션만 채웁니다.** 사람이 쓴 문장을 지우고 새로 쓰는 일은
-명시적으로 요청할 때만 합니다.
-
-## 어떤 걸 할 수 있나
-
-호출할 때 두 모드 중 하나를 고릅니다. 인자를 빼면 물어봅니다.
-
-```
+```text
 /k-readme 부트캠프
 /k-readme 동아리
 ```
 
-### 🎒 부트캠프형 — 기술 서사가 주인공
+Claude Code와 Codex에만 설치하려면 에이전트를 지정하세요.
 
-부스트캠프, 우아한테크코스, 카카오테크캠퍼스, SSAFY, 소프트웨어 마에스트로
+```bash
+npx --yes skills add eomgerm/k-project-readme-skill -g -a claude-code codex
+```
 
-| 하는 일 | 어디서 재료를 얻나 |
-| --- | --- |
-| 기술적 도전 섹션 | `fix:`/`perf:`/`refactor:` 커밋, 머지된 PR, 닫힌 이슈에서 후보 5개를 뽑아 고르게 합니다 |
-| 문제 → 시도 → 결과 4단 블록 | 전후 수치를 나란히 놓습니다. 라벨은 프로젝트마다 갈아씁니다 |
-| 아키텍처와 폴더 트리 | 실제 디렉터리를 읽고 각 줄에 한국어 주석을 답니다 |
-| 기술 스택 표 | `package.json`, `build.gradle`, `Podfile`, `go.mod` 등에서 직접 읽습니다 |
+## 같은 저장소, 다른 README
 
-### 🎈 동아리형 — 서비스 소개가 주인공
+개인 프로젝트 [Weather Badge](https://github.com/eomgerm/weather-badge)를 두 모드로 다시 작성했습니다.
+원본은 사용법 중심의 짧은 문서였고, 두 결과물은 같은 근거를 서로 다른 독자에게 맞춰 배치합니다.
 
-SOPT, 디프만, YAPP, 넥스터즈, 매쉬업, DDD, 코테이토, UMC
+### Before — 기존 README
 
-| 하는 일 | 어디서 재료를 얻나 |
-| --- | --- |
-| 히어로 + 링크줄 | 배포 워크플로와 도메인 설정에서 배포 주소를 찾습니다 |
-| 핵심 기능 GIF 테이블 | `<table>` 2×N 마크업을 완성하고 캡션 자리를 만듭니다 |
-| 팀원 아바타 테이블 | `gh api contributors`로 로그인 ID와 아바타 URL을 채웁니다 |
-| 서비스 소개 | 저장소 안의 실제 문구와 기획 문서를 먼저 찾고, 없으면 한 번 물어봅니다 |
+<img src="examples/assets/weather-badge/readme-before.png" alt="Weather Badge 기존 README" width="100%"/>
 
-### 🧹 공통
+### After — 동아리형
 
-| 하는 일 | 설명 |
-| --- | --- |
-| 갱신 모드 | 기존 README를 읽고 빠진 섹션만 채웁니다 |
-| 남은 작업 목록 | 채워야 할 이미지와 링크를 파일 맨 아래 주석으로 모아둡니다 |
-| 모바일 데모 GIF | `adb`·`scrcpy`로 녹화하고 `ffmpeg` 팔레트 2-pass로 변환합니다 |
-| 질문 3개 제한 | 저장소에서 캐낼 수 있는 건 묻지 않습니다 |
+서비스를 처음 보는 사람이 화면과 사용법을 먼저 이해하도록 구성합니다. 데모, 핵심 기능, 활용처가 앞에 옵니다.
 
-## AI 티를 어떻게 없앴나
+<a href="examples/README.club.md">
+  <img src="examples/assets/weather-badge/readme-club.png" alt="k-readme 동아리형으로 다시 쓴 Weather Badge README" width="100%"/>
+</a>
 
-어투 규칙을 감으로 정하지 않고 실측했습니다. 대상은 위 동아리·부트캠프의 프로젝트 저장소 16개입니다.
+**[동아리형 README 전체 보기](examples/README.club.md)**
 
-| 실측 결과 | 규칙으로 옮긴 것 |
-| --- | --- |
-| 합쇼체 104회 : 해요체 17회 : 평서체 **0회** | 합쇼체 기본, 소개·캡션만 해요체, `~이다`/`~한다` 금지 |
-| `뿐만 아니라`·`원활하게`·`혁신`·`완벽한` 등 8개 표현이 **0회** | 금지어로 명시 |
-| `~을 통해` 31회, `효율적으로` 4회 | 금지하지 않습니다. 실제로 쓰이는 말을 막으면 문장이 뒤틀립니다 |
-| 이모지 — 헤딩 120개 : 본문 **0개** | 헤딩에만 1개, 프로젝트 도메인에서 고릅니다 |
-| 한 파일 안에서 문체가 섞임 | 통일하지 않습니다. 통일하려 들면 오히려 AI 티가 납니다 |
+### After — 부트캠프형
 
-어휘보다 구조가 더 큰 신호였습니다. 3항 병렬, 균일한 불릿 길이, 형용사 겹치기,
-`~하고 ~하며 ~하여`로 이은 세 절 문장을 규칙으로 막았습니다.
+구현 난이도와 판단 근거가 드러나도록 기술적 도전을 기능보다 앞에 둡니다. 커밋으로 확인한 변화도 함께 연결합니다.
 
-레퍼런스를 그대로 베끼지 않도록 헤딩 문구에는 프로젝트 고유 사실을 넣게 강제하고,
-눈에 띄는 표현은 블랙리스트로 걸었습니다.
+<a href="examples/README.bootcamp.md">
+  <img src="examples/assets/weather-badge/readme-bootcamp.png" alt="k-readme 부트캠프형으로 다시 쓴 Weather Badge README" width="100%"/>
+</a>
 
-## 처음 시작하는 순서
+**[부트캠프형 README 전체 보기](examples/README.bootcamp.md)**
 
-1. 위 설치 명령으로 스킬을 넣습니다.
-2. README를 쓸 저장소로 이동합니다. 이 스킬은 현재 저장소를 읽습니다.
-3. `/k-readme 부트캠프` 또는 `/k-readme 동아리`를 호출합니다.
-4. 기술 서사 후보와 질문 몇 개에 답하면 초안이 나옵니다.
-5. 파일 맨 아래 남은 작업 주석을 보고 이미지와 링크를 채웁니다.
-6. 데모 GIF가 필요하면 아래 표의 스킬을 이어서 씁니다.
+예시의 서비스 동작은 `demo-gif` 스킬 방식으로 녹화했고, README 화면은 GitHub 마크다운 렌더러로
+그린 뒤 Playwright로 캡처했습니다. 재현용 스크립트는 [`examples/record-demo.mjs`](examples/record-demo.mjs)에 있습니다.
 
-## 문서
+## 두 모드의 차이
 
-| 문서 | 설명 |
-| --- | --- |
-| [SKILL.md](skills/k-readme/SKILL.md) | 절차, 두 모드의 섹션 순서, 어투 규칙, 복사 방지 장치 |
-| [마크업 골격](skills/k-readme/references/structure.md) | 히어로·GIF 테이블·기술 스택 표·아바타 테이블·폴더 트리 실물 |
-| [문체 발췌](skills/k-readme/references/tone-samples.md) | 섹션별 종결어미와 리듬. 재사용 금지 표시와 원문 링크 |
-| [모바일 데모 GIF](skills/k-readme/references/mobile-demo.md) | `adb`·`scrcpy` 녹화와 `ffmpeg` 팔레트 2-pass 변환, 용량 줄이기 |
+| | 부트캠프형 | 동아리형 |
+| :---: | --- | --- |
+| 독자가 먼저 볼 것 | 문제 해결 과정과 결과 | 서비스 가치와 실제 화면 |
+| 핵심 섹션 | 기술적 도전, 아키텍처 | 서비스 소개, 기능 데모, 활용 방법 |
+| 주로 읽는 근거 | `fix`·`perf`·`refactor` 커밋, PR, 이슈 | 기획 문서, 배포 주소, 기능 화면 |
+| 문서 흐름 | 문제 → 시도 → 확인한 변화 | 화면 → 기능 → 바로 사용하기 |
+| 잘 맞는 프로젝트 | 부트캠프, 교육 과정, 기술 포트폴리오 | IT 동아리, 사이드 프로젝트, 해커톤 |
+| 저장소를 보고 켜는 블록 | ERD·API 명세·CI/CD 표·폴더 트리 | 스토어 링크·기능 GIF 테이블 |
 
-## 함께 쓰면 좋은 스킬
+모드를 고르지 않으면 저장소의 기술 서사와 서비스 자료를 비교해 더 적합한 쪽을 제안합니다.
 
-| 스킬 | 쓰는 때 |
-| --- | --- |
-| [demo-gif](https://github.com/conorbronsdon/demo-gif-skill) | 웹·CLI 데모 GIF 녹화. 모바일 앱은 이 스킬이 직접 다룹니다 |
-| [humanize-korean](https://github.com/im-not-ai/humanize-korean) | 초안이 나온 뒤 문체를 더 손보고 싶을 때 |
-| [k-skill](https://github.com/NomaDamas/k-skill) | 한국 실생활 스킬 모음. 이 README의 구조를 참고했습니다 |
+## 어떻게 동작하나요?
+
+1. `package.json`, `build.gradle`, `Podfile`, `go.mod` 등에서 실제 기술 스택을 찾습니다.
+2. Git 커밋, PR, 이슈와 폴더 구조에서 설명할 만한 근거를 모읍니다.
+3. 저장소 특성으로 블록 조건을 판정합니다. 서버 레포면 ERD와 API 명세가, 워크플로가 있으면
+   CI/CD 표가 켜집니다. 기여자가 한 명이면 팀원 표 대신 한 줄로 나옵니다.
+4. 모드에 따라 맨 앞 블록이 갈립니다. 부트캠프형은 기술적 도전, 동아리형은 기능 데모입니다.
+5. 저장소에서 확인할 수 없는 이미지와 수치만 `TODO_...`로 남깁니다.
+
+19개 블록 중 조건이 맞는 것만 조합하기 때문에 저장소마다 섹션 구성이 달라집니다.
+팀원 아바타를 채울 때는 `gh`가 있으면 쓰고, 없으면 Git 작성자 이름만 넣습니다.
+
+기존 `README.md`가 있으면 사람이 작성한 내용은 보존하고, 근거 없이 성과 수치를 만들지 않습니다.
+
+## 자동으로 채우는 내용
+
+| 항목 | 확인하는 곳 | 결과 |
+| --- | --- | --- |
+| 기술 스택 | 의존성·빌드 파일 | 역할별 표 + shields.io 뱃지 |
+| 개발 기간 | 첫 커밋과 최근 커밋 | 프로젝트 기간 |
+| 기술적 도전 | 커밋, 머지된 PR, 닫힌 이슈 | 문제·시도·결과·근거 링크 |
+| 폴더 구조 | 실제 디렉터리 | 한국어 설명이 붙은 트리 |
+| 팀원 | GitHub Contributors 또는 Git 작성자 | 아바타와 담당 영역 |
+| 실행 방법 | `package.json` 스크립트, `gradlew`, `docker-compose` | 사전 준비와 번호 붙은 실행 절차 |
+| API 문서 | `springdoc`·`swagger` 의존성 | Swagger 주소와 확인 URL 표 |
+| CI/CD | `.github/workflows/*.yml` | 워크플로·트리거·동작 표와 상태 뱃지 |
+| 배포 | GitHub Actions, Vercel, Docker 설정 | 서비스 링크와 배포 구조 |
+
+저장소만으로 알 수 없는 기획 배경이나 역할은 최대 세 가지 질문으로 확인합니다.
+
+## 파일 구성
+
+```text
+k-project-readme-skill
+├── skills/k-readme
+│   ├── SKILL.md
+│   └── references
+│       ├── structure.md
+│       ├── badges.md
+│       ├── tone-samples.md
+│       └── mobile-demo.md
+├── examples
+│   ├── README.club.md
+│   ├── README.bootcamp.md
+│   ├── record-demo.mjs
+│   └── assets
+├── README.md
+└── LICENSE
+```
+
+- [스킬 본문](skills/k-readme/SKILL.md): 분석 순서, 블록 조건표, 문체 규칙
+- [블록 카탈로그](skills/k-readme/references/structure.md): 19개 블록의 마크업 골격과 변형
+- [뱃지 참조](skills/k-readme/references/badges.md): 스택군별 slug·색 50개와 배치 규칙
+- [문체 참고](skills/k-readme/references/tone-samples.md): 한국 프로젝트 문서의 종결어미와 리듬
+- [모바일 데모](skills/k-readme/references/mobile-demo.md): 앱 화면 GIF 제작 절차
+
+## 만든 사람
+
+<p align="center">
+  <a href="https://github.com/eomgerm">
+    <img src="https://avatars.githubusercontent.com/u/52905679?v=4" width="120" alt="eomgerm"/><br/>
+    <strong>eomgerm</strong>
+  </a>
+</p>
 
 ## 라이선스
 
-MIT
-
-<!-- 남은 작업
-  - [ ] TODO_썸네일_이미지 — 1280x640 정도, 실제 생성 결과 스크린샷을 넣으면 가장 설득력 있음
--->
+[MIT License](LICENSE)

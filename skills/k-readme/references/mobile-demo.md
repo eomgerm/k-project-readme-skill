@@ -111,7 +111,7 @@ gifsicle -O3 --lossy=80 --colors 128 demo.gif -o demo-min.gif
 ## 저장 위치
 
 ```
-docs/
+examples/assets/
   demo-signup.gif
   demo-feed.gif
 ```
