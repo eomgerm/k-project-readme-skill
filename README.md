@@ -62,7 +62,7 @@ npx --yes skills add eomgerm/k-project-readme-skill -g -a claude-code codex
 **[부트캠프형 README 전체 보기](examples/README.bootcamp.md)**
 
 예시의 서비스 동작은 `demo-gif` 스킬 방식으로 녹화했고, README 화면은 GitHub 마크다운 렌더러로
-그린 뒤 Playwright로 캡처했습니다. 재현용 스크립트는 [`examples/record-demo.mjs`](examples/record-demo.mjs)에 있습니다.
+그린 뒤 Playwright로 캡처했습니다.
 
 ## 두 모드의 차이
 
@@ -121,7 +121,6 @@ k-project-readme-skill
 ├── examples
 │   ├── README.club.md
 │   ├── README.bootcamp.md
-│   ├── record-demo.mjs
 │   └── assets/weather-badge
 ├── assets
 │   └── thumbnail.png
