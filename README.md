@@ -1,4 +1,4 @@
-<img src="examples/assets/thumbnail.png" alt="k-readme — 부트캠프형과 동아리형 프로젝트 README 생성 스킬" width="100%"/>
+<img src="assets/thumbnail.png" alt="k-readme — 부트캠프형과 동아리형 프로젝트 README 생성 스킬" width="100%"/>
 
 <h1 align="center">k-readme</h1>
 
@@ -122,7 +122,9 @@ k-project-readme-skill
 │   ├── README.club.md
 │   ├── README.bootcamp.md
 │   ├── record-demo.mjs
-│   └── assets
+│   └── assets/weather-badge
+├── assets
+│   └── thumbnail.png
 ├── README.md
 └── LICENSE
 ```
