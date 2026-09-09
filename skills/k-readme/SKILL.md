@@ -42,11 +42,14 @@ license: MIT
 
 | 조건 | 판정 근거 |
 | --- | --- |
-| 서버 레포 | `build.gradle(.kts)` `pom.xml` `nest-cli.json` `requirements.txt` |
-| 앱 레포 | `Podfile` `*.xcodeproj` `app/build.gradle(.kts)` |
+| 서버 레포 | `pom.xml` `nest-cli.json`, 또는 `build.gradle(.kts)`·`requirements.txt` 안에 서버 프레임워크 의존성(`spring-boot` `ktor-server` `django` `fastapi` `flask`) |
+| 앱 레포 | `Podfile` `*.xcodeproj`, 또는 `app/build.gradle(.kts)`에 `com.android.application` |
 | 실행 스크립트 있음 | `package.json` 의 `scripts`, `gradlew`, `docker-compose*.yml` |
 | API 문서 있음 | `springdoc` `swagger` `@nestjs/swagger` 의존성 |
 | CI 있음 | `.github/workflows/*.yml` |
+
+**앱 레포와 서버 레포는 배타다.** 안드로이드 프로젝트는 루트에 `build.gradle(.kts)`를 두므로
+파일 이름만으로 판정하면 서버로 잘못 걸린다 — 없는 DB의 ERD 섹션이 생긴다.
 
 ### 4. 트러블슈팅 후보 발굴 (부트캠프형에서 필수)
 
@@ -81,7 +84,7 @@ gh issue list --state closed --limit 30 --json number,title,body
 | 레이어 | 블록 | 조건 |
 | --- | --- | --- |
 | **L0 히어로** | H1 배너 | 항상 |
-| | H2 링크줄 | 항상 |
+| | H2 링크줄 | 항상 (링크 2개 이하면 생략하고 S1에 녹인다) |
 | | H3 스토어 링크 | 앱 레포 |
 | | H4 CI 상태 뱃지 | CI 있음 |
 | **L1 요약** | S1 소개 + 불릿 | 항상 |
