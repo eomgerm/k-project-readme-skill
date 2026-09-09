@@ -11,9 +11,10 @@
 ## ☁️ 날씨 API 응답을 배지 한 장으로
 
 Weather Badge는 도시와 크기를 입력받아 현재 날씨, 체감 온도, 풍속과 대기질을 SVG로 조합합니다.
-GitHub README와 Notion에서는 생성된 URL만 이미지로 붙이면 됩니다.
-서비스는 [weather-badge.vercel.app](https://weather-badge.vercel.app/) 에 배포돼 있고,
-저장소는 [eomgerm/weather-badge](https://github.com/eomgerm/weather-badge) 입니다.
+서비스는 [weather-badge.vercel.app](https://weather-badge.vercel.app/) 에 배포돼 있습니다.
+
+- GitHub README와 Notion에서는 생성된 URL만 이미지로 붙이면 됩니다.
+- 아이콘까지 SVG 안에 담겨 있어 배지 주소 하나로 렌더링이 끝납니다.
 
 ### 프로젝트 기간
 
