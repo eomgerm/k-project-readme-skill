@@ -47,10 +47,11 @@
 
 ### H4 CI 상태 뱃지 (CI 있음)
 
-배너 바로 아래 한 줄. 워크플로 파일명을 실제 파일과 맞춘다 — 틀리면 404가 떠서 깨진 이미지로 남는다.
+배너 바로 아래 한 줄. `{워크플로_파일명}`에는 확장자까지 넣는다 (`Build.yaml`, `ci.yml`). `.yaml`인데 `.yml`로 적으면
+404가 떠서 깨진 이미지로 남는다.
 
 ```markdown
-[![CI](https://github.com/{owner}/{repo}/actions/workflows/{파일명}.yml/badge.svg)](https://github.com/{owner}/{repo}/actions)
+[![CI](https://github.com/{owner}/{repo}/actions/workflows/{워크플로_파일명}/badge.svg)](https://github.com/{owner}/{repo}/actions)
 ```
 
 ---
