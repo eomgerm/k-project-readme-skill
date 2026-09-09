@@ -30,7 +30,7 @@ license: MIT
 
 물어보기 전에 캐낼 수 있는 건 전부 캐낸다.
 
-- **기술 스택** — `package.json`, `build.gradle(.kts)`, `Podfile`, `requirements.txt`, `go.mod`, `Cargo.toml`
+- **기술 스택** — `package.json`, `build.gradle(.kts)`, `Podfile`, `requirements.txt`, `pyproject.toml`, `go.mod`, `Cargo.toml`
 - **폴더 구조** — 실제 트리를 읽고 각 디렉터리에 한국어 주석을 단다
 - **개발 기간** — `git log --reverse --format=%ad --date=short | head -1` 과 최근 커밋
 - **팀원** — `gh api repos/{owner}/{repo}/contributors` 로 로그인 ID·아바타 URL.
@@ -42,14 +42,17 @@ license: MIT
 
 | 조건 | 판정 근거 |
 | --- | --- |
-| 서버 레포 | `pom.xml` `nest-cli.json`, 또는 `build.gradle(.kts)`·`requirements.txt` 안에 서버 프레임워크 의존성(`spring-boot` `ktor-server` `django` `fastapi` `flask`) |
-| 앱 레포 | `Podfile` `*.xcodeproj`, 또는 `app/build.gradle(.kts)`에 `com.android.application` |
+| 서버 레포 | `pom.xml` `nest-cli.json` `manage.py`, 또는 `build.gradle(.kts)`·`requirements*.txt`·`pyproject.toml` 안에 서버 프레임워크 의존성(`spring-boot` `ktor-server` `django` `fastapi` `flask`) |
+| 앱 레포 | `app/src/main/AndroidManifest.xml`, `Podfile` `*.xcodeproj`, `Project.swift` `Workspace.swift`(Tuist) |
 | 실행 스크립트 있음 | `package.json` 의 `scripts`, `gradlew`, `docker-compose*.yml` |
-| API 문서 있음 | `springdoc` `swagger` `@nestjs/swagger` 의존성 |
+| API 문서 있음 | `springdoc` `swagger` `@nestjs/swagger` `drf-spectacular` `drf-yasg` 의존성, 또는 `fastapi`(OpenAPI 내장) |
 | CI 있음 | `.github/workflows/*.yml` |
 
 **앱 레포와 서버 레포는 배타다.** 안드로이드 프로젝트는 루트에 `build.gradle(.kts)`를 두므로
-파일 이름만으로 판정하면 서버로 잘못 걸린다 — 없는 DB의 ERD 섹션이 생긴다.
+파일 이름만으로 판정하면 서버로 잘못 걸린다 — 없는 DB의 ERD 섹션이 생긴다. 반대로 요즘
+빌드 구성은 마커를 숨긴다: Gradle 컨벤션 플러그인은 `com.android.application`을 문자열로
+남기지 않고, Tuist는 `.xcodeproj`를 커밋하지 않으며, 파이썬은 `requirements.txt` 대신
+`pyproject.toml`을 쓴다. 위 마커로 판정한다.
 
 ### 4. 트러블슈팅 후보 발굴 (부트캠프형에서 필수)
 
@@ -154,7 +157,8 @@ L2가 빈다 — T1을 켜지 않고 F1을 원래 자리(L3 끝)에 두고, L3�
 
 ### 금지 표현
 
-16개 레퍼런스에서 **한 번도 안 나온** 말들이다. 나오면 AI가 쓴 문장이다.
+16개 레퍼런스에서 **거의 안 나온** 말들이다. 나오면 AI가 쓴 문장이라고 봐도 된다
+(`~에 대해`만 한 저장소에서 2회 나왔고 나머지 일곱은 0회다).
 
 `뿐만 아니라` `~에 대해` `원활하게` `혁신` `완벽한` `핵심적인` `경험을 제공` `최적화하였`
 
