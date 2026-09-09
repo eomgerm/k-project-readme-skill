@@ -22,7 +22,8 @@ https://img.shields.io/badge/{이름}-{색}?style=for-the-badge&logo={slug}&logo
 | 밑줄 `_` | `__` | `next__auth` → next_auth |
 | 하이픈 `-` | `--` | `Vanilla--Extract` → Vanilla-Extract |
 
-`-`는 이름과 색을 나누는 구분자다. 하이픈이 든 이름을 그냥 적으면 색이 날아간다.
+`-`는 이름과 색을 나누는 구분자다. 하이픈이 든 이름을 그냥 적으면 이름이 라벨·메시지 두 칸으로
+쪼개지고 왼쪽 칸이 기본 회색으로 뜬다 (`styled-components-DB7093` → `STYLED | COMPONENTS`).
 
 ### logoColor
 
@@ -114,7 +115,8 @@ Kotlin은 서버 표에 있다. 안드로이드 라이브러리는 로고가 없
 
 1. **뱃지 URL을 직접 열어 로고가 붙는지 확인한다.** slug는 브랜드명을 소문자로 붙이고
    `.`을 `dot`으로 바꾼 형태다 (`Socket.io` → `socketdotio`, `Vue.js` → `vuedotjs`).
-   로고가 붙은 응답은 SVG 안에 `<image>`가 들어 있고 6KB 안팎, 안 붙으면 434바이트다.
+   로고가 붙은 응답은 SVG 안에 `<image>`가 들어 있고 크기는 1~9KB로 편차가 크다.
+   안 붙으면 정확히 434바이트다.
 2. 붙으면 쓰고, **안 붙거나 확인이 번거로우면 `logo`와 `logoColor`를 빼고 색만 넣는다.**
    실측 185개 중 51개(28%)가 이 방식이다. 추측한 slug는 오류를 내지 않고 조용히
    로고 없는 뱃지로 렌더되기 때문에 커밋 전에 잡히지 않는다.
