@@ -42,17 +42,17 @@ license: MIT
 
 | 조건 | 판정 근거 |
 | --- | --- |
-| 서버 레포 | `pom.xml` `nest-cli.json` `manage.py`, 또는 `build.gradle(.kts)`·`requirements*.txt`·`pyproject.toml` 안에 서버 프레임워크 의존성(`spring-boot` `ktor-server` `django` `fastapi` `flask`) |
+| 서버 레포 | `pom.xml` `nest-cli.json` `manage.py`, 또는 매니페스트 안의 서버 프레임워크 의존성 — `build.gradle(.kts)`·`requirements*.txt`·`pyproject.toml`의 `spring-boot` `ktor-server` `django` `fastapi` `flask`, `go.mod`의 `gin-gonic` `echo` `fiber` `go-chi`, `Cargo.toml`의 `axum` `actix-web` `rocket`, `Package.swift`의 `vapor` |
 | 앱 레포 | `**/app/src/main/AndroidManifest.xml`, `Podfile` `*.xcodeproj`, `Project.swift` `Workspace.swift`(Tuist) |
-| 실행 스크립트 있음 | `package.json` 의 `scripts`, `gradlew`, `docker-compose*.yml` |
-| API 문서 있음 | `springdoc` `swagger` `@nestjs/swagger` `drf-spectacular` `drf-yasg` 의존성, 또는 `fastapi`(OpenAPI 내장) |
+| 실행 스크립트 있음 | `package.json` 의 `scripts`, `gradlew`, `pubspec.yaml`(Flutter), `docker-compose*.yml`·`*.yaml`, `compose.yaml`, 루트 `Makefile` |
+| API 문서 있음 | `springdoc` `swagger` `@nestjs/swagger` `drf-spectacular` `drf-yasg` `swaggo` `utoipa` 의존성, `docs/swagger.json`, 또는 `fastapi`(OpenAPI 내장) |
 | CI 있음 | `.github/workflows/*.yml` · `*.yaml` |
 
 **파일 이름만으로 판정하지 않는다.** 안드로이드 프로젝트도 루트에 `build.gradle(.kts)`를 두므로
 이름만 보면 서버로 걸린다 — 없는 DB의 ERD 섹션이 생긴다. 반대로 요즘
 빌드 구성은 마커를 숨긴다: Gradle 컨벤션 플러그인은 `com.android.application`을 문자열로
 남기지 않고, Tuist는 `.xcodeproj`를 커밋하지 않으며, 파이썬은 `requirements.txt` 대신
-`pyproject.toml`을 쓴다. 워크플로 확장자도 `.yml`과 `.yaml`이 섞인다. 위 마커로 판정한다.
+`pyproject.toml`을 쓴다. 워크플로와 compose 파일은 `.yml`과 `.yaml`이 섞인다. 위 마커로 판정한다.
 
 **마커는 하위 디렉터리까지 찾는다.** 앱 모듈이 루트에 없고 `Aos/`, `android/`, `modules/app/`
 아래 있는 저장소가 흔하다. 서버 마커도 `be/`, `backend/`, `server/` 아래 있을 수 있다.
