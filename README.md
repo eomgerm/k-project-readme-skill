@@ -1,10 +1,10 @@
-<img src="assets/thumbnail.png" alt="k-readme — 부트캠프형과 동아리형 프로젝트 README 생성 스킬" width="100%"/>
+<img src="assets/thumbnail.png" alt="k-readme — 기술 서사형과 서비스 소개형 프로젝트 README 생성 스킬" width="100%"/>
 
 <h1 align="center">k-readme</h1>
 
 <p align="center">
   저장소의 코드와 이력을 읽고, 프로젝트 성격에 맞는 한국어 README를 작성합니다.<br/>
-  기술적 문제 해결은 <strong>부트캠프형</strong>으로, 서비스 경험은 <strong>동아리형</strong>으로 보여주세요.
+  기술적 문제 해결은 <strong>기술 서사형</strong>으로, 서비스 경험은 <strong>서비스 소개형</strong>으로 보여주세요.
 </p>
 
 <p align="center">
@@ -22,8 +22,8 @@ npx --yes skills add eomgerm/k-project-readme-skill -g
 README를 만들 저장소에서 원하는 모드를 말하면 됩니다.
 
 ```text
-/k-readme 부트캠프
-/k-readme 동아리
+/k-readme 기술     # 기술적 도전이 맨 앞 (부트캠프 로도 받는다)
+/k-readme 서비스   # 기능 데모가 맨 앞 (동아리 로도 받는다)
 ```
 
 Claude Code와 Codex에만 설치하려면 에이전트를 지정하세요.
@@ -41,41 +41,41 @@ npx --yes skills add eomgerm/k-project-readme-skill -g -a claude-code codex
 
 <img src="examples/assets/weather-badge/readme-before.png" alt="Weather Badge 기존 README" width="100%"/>
 
-### After — 동아리형
+### After — 서비스 소개형 (기능 데모가 맨 앞)
 
 서비스를 처음 보는 사람이 화면과 사용법을 먼저 이해하도록 구성합니다. 데모, 핵심 기능, 활용처가 앞에 옵니다.
 
-<a href="examples/README.club.md">
-  <img src="examples/assets/weather-badge/readme-club.png" alt="k-readme 동아리형으로 다시 쓴 Weather Badge README" width="100%"/>
+<a href="examples/README.service.md">
+  <img src="examples/assets/weather-badge/readme-service.png" alt="k-readme 서비스 소개형으로 다시 쓴 Weather Badge README" width="100%"/>
 </a>
 
-**[동아리형 README 전체 보기](examples/README.club.md)**
+**[서비스 소개형 README 전체 보기](examples/README.service.md)**
 
-### After — 부트캠프형
+### After — 기술 서사형 (기술적 도전이 맨 앞)
 
 구현 난이도와 판단 근거가 드러나도록 기술적 도전을 기능보다 앞에 둡니다. 커밋으로 확인한 변화도 함께 연결합니다.
 
-<a href="examples/README.bootcamp.md">
-  <img src="examples/assets/weather-badge/readme-bootcamp.png" alt="k-readme 부트캠프형으로 다시 쓴 Weather Badge README" width="100%"/>
+<a href="examples/README.tech.md">
+  <img src="examples/assets/weather-badge/readme-tech.png" alt="k-readme 기술 서사형으로 다시 쓴 Weather Badge README" width="100%"/>
 </a>
 
-**[부트캠프형 README 전체 보기](examples/README.bootcamp.md)**
+**[기술 서사형 README 전체 보기](examples/README.tech.md)**
 
 예시의 서비스 동작은 `demo-gif` 스킬 방식으로 녹화했고, README 화면은 GitHub 마크다운 렌더러로
 그린 뒤 Playwright로 캡처했습니다.
 
 ## 두 모드의 차이
 
-| | 부트캠프형 | 동아리형 |
+| | 기술 서사형 | 서비스 소개형 |
 | :---: | --- | --- |
-| 독자가 먼저 볼 것 | 문제 해결 과정과 결과 | 서비스 가치와 실제 화면 |
+| 맨 앞에 오는 것 | 기술적 도전 — 문제·시도·전후 수치 | 기능 데모 — 화면 GIF와 사용법 |
 | 핵심 섹션 | 기술적 도전, 아키텍처 | 서비스 소개, 기능 데모, 활용 방법 |
 | 주로 읽는 근거 | `fix`·`perf`·`refactor` 커밋, PR, 이슈 | 기획 문서, 배포 주소, 기능 화면 |
 | 문서 흐름 | 문제 → 시도 → 확인한 변화 | 화면 → 기능 → 바로 사용하기 |
-| 잘 맞는 프로젝트 | 부트캠프, 교육 과정, 기술 포트폴리오 | IT 동아리, 사이드 프로젝트, 해커톤 |
+| 이런 팀이 많이 쓴다 | 부스트캠프, 우테코, 카테캠, SSAFY | SOPT, 디프만, YAPP, 넥스터즈 |
 | 저장소를 보고 켜는 블록 | ERD·API 명세·CI/CD 표·폴더 트리 | 스토어 링크·기능 GIF 테이블 |
 
-모드를 고르지 않으면 저장소의 기술 서사와 서비스 자료를 비교해 더 적합한 쪽을 제안합니다.
+모드를 고르지 않으면 무엇을 맨 앞에 세울지 한 번 묻습니다. 저장소만 보고 추측하지는 않습니다 — 둘을 가르는 근거가 코드에 없습니다.
 
 ## 어떻게 동작하나요?
 
@@ -83,7 +83,7 @@ npx --yes skills add eomgerm/k-project-readme-skill -g -a claude-code codex
 2. Git 커밋, PR, 이슈와 폴더 구조에서 설명할 만한 근거를 모읍니다.
 3. 저장소 특성으로 블록 조건을 판정합니다. 서버 레포면 ERD와 API 명세가, 워크플로가 있으면
    CI/CD 표가 켜집니다. 기여자가 한 명이면 팀원 표 대신 한 줄로 나옵니다.
-4. 모드에 따라 맨 앞 블록이 갈립니다. 부트캠프형은 기술적 도전, 동아리형은 기능 데모입니다.
+4. 모드에 따라 맨 앞 블록이 갈립니다. 기술 서사형은 기술적 도전, 서비스 소개형은 기능 데모입니다.
 5. 저장소에서 확인할 수 없는 이미지와 수치만 `TODO_...`로 남깁니다.
 
 19개 블록 중 조건이 맞는 것만 조합하기 때문에 저장소마다 섹션 구성이 달라집니다.
@@ -119,8 +119,8 @@ k-project-readme-skill
 │       ├── tone-samples.md
 │       └── mobile-demo.md
 ├── examples
-│   ├── README.club.md
-│   ├── README.bootcamp.md
+│   ├── README.service.md
+│   ├── README.tech.md
 │   └── assets/weather-badge
 ├── assets
 │   └── thumbnail.png
