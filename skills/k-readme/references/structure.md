@@ -247,12 +247,16 @@
 {명령}
 
 # 2. 환경변수 설정
-cp .env.example .env
+{환경변수 설정 명령}
 
 # 3. 개발 서버 실행
 {명령}
 ```
 ~~~
+
+`{환경변수 설정 명령}`은 저장소가 실제로 가진 파일로 쓴다 — `.env.example`이 있으면
+`cp .env.example .env`, 스프링은 `application-local.yml`, 안드로이드는 `local.properties`,
+iOS는 `.xcconfig`. 해당 파일이 없으면 이 단계를 빼고 번호를 다시 매긴다.
 
 확인할 주소가 여러 개면 표로 잇는다. R2가 켜져 있으면 API 문서 주소도 여기 넣는다.
 
