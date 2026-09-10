@@ -254,14 +254,17 @@ cp .env.example .env
 ```
 ~~~
 
-확인할 주소가 여러 개면 표로 잇는다. R2가 켜져 있으면 Swagger 주소도 여기 넣는다.
+확인할 주소가 여러 개면 표로 잇는다. R2가 켜져 있으면 API 문서 주소도 여기 넣는다.
 
 ```markdown
 | 확인 | URL |
 | --- | --- |
-| 웹 | http://localhost:5173 |
-| API 문서 | http://localhost:8080/swagger-ui.html |
+| 웹 | http://localhost:{프런트_포트} |
+| {문서 이름} | http://localhost:{서버_포트}{문서_경로} |
 ```
+
+`{문서_경로}`는 스택마다 다르다 — springdoc `/swagger-ui.html`, Ktor `/swagger`,
+FastAPI `/docs`. REST Docs는 빌드 산출 정적 HTML이라 로컬 주소가 없다.
 
 ### R2 API 명세 (API 문서 있음)
 
