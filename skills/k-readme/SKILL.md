@@ -43,7 +43,7 @@ license: MIT
 | 조건 | 판정 근거 |
 | --- | --- |
 | 서버 레포 | `pom.xml` `nest-cli.json` `manage.py`, 또는 매니페스트 안의 서버 프레임워크 의존성 — `build.gradle(.kts)`·`requirements*.txt`·`pyproject.toml`의 `spring-boot` `ktor-server` `django` `fastapi` `flask`, `go.mod`의 `gin-gonic` `echo` `fiber` `go-chi`, `Cargo.toml`의 `axum` `actix-web` `rocket`, `Package.swift`의 `vapor` |
-| 앱 레포 | `**/app/src/main/AndroidManifest.xml`, `Podfile` `*.xcodeproj`, `Project.swift` `Workspace.swift`(Tuist) |
+| 앱 레포 | `**/src/main/AndroidManifest.xml`·`**/src/androidMain/AndroidManifest.xml`(모듈명 무관 — KMP는 `androidApp/`, `composeApp/`을 쓴다), `Podfile` `*.xcodeproj`, `Project.swift` `Workspace.swift`(Tuist) |
 | 실행 스크립트 있음 | `package.json` 의 `scripts`, `gradlew`, `pubspec.yaml`(Flutter), `docker-compose*.yml`·`*.yaml`, `compose.yaml`, 루트 `Makefile` |
 | API 문서 있음 | `springdoc` `swagger` `@nestjs/swagger` `drf-spectacular` `drf-yasg` `swaggo` `utoipa` 의존성, `docs/swagger.json`, 또는 `fastapi`(OpenAPI 내장) |
 | CI 있음 | `.github/workflows/*.yml` · `*.yaml` |

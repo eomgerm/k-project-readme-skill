@@ -4,16 +4,12 @@
   <a href="https://weather-badge.vercel.app/">
     <img src="https://weather-badge.vercel.app/api/badge?lat=37.5666791&lon=126.9782914&size=180" alt="서울의 현재 날씨를 보여주는 Weather Badge" width="180"/>
   </a>
-  <p>
-    <a href="https://weather-badge.vercel.app/">배지 만들기</a>
-    &nbsp;·&nbsp;
-    <a href="https://github.com/eomgerm/weather-badge">GitHub</a>
-  </p>
 </div>
 
 ## ☀️ 프로필에 오늘 날씨 한 칸
 
 Weather Badge는 도시의 현재 날씨를 SVG 한 장으로 만들어 주는 웹 서비스예요.
+[weather-badge.vercel.app](https://weather-badge.vercel.app/) 에서 바로 만들 수 있어요.
 
 - 도시와 크기를 고르면 바로 쓸 수 있는 배지가 만들어져요.
 - GitHub 프로필, Notion, 웹페이지에 이미지 주소만 붙이면 됩니다.
