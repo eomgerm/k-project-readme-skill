@@ -42,10 +42,10 @@ license: MIT
 
 | 조건 | 판정 근거 |
 | --- | --- |
-| 서버 레포 | `pom.xml` `nest-cli.json` `manage.py`, 또는 매니페스트 안의 서버 프레임워크 의존성 — `build.gradle(.kts)`·`gradle/libs.versions.toml`·`buildSrc/**/*.gradle.kts`·`requirements*.txt`·`pyproject.toml`의 `spring-boot`(`org.springframework.boot`) `ktor-server` `django` `fastapi` `flask`, `go.mod`의 `gin-gonic` `echo` `fiber` `go-chi` `gorilla/mux` `swaggo`(또는 `main.go`가 `net/http`로 `ListenAndServe`를 부를 때), `Cargo.toml`의 `axum` `actix-web` `rocket`, `Package.swift`의 `vapor` |
+| 서버 레포 | `pom.xml` `nest-cli.json` `manage.py`, 또는 매니페스트 안의 서버 프레임워크 의존성 — `build.gradle(.kts)`·`gradle/libs.versions.toml`·`buildSrc/**/*.gradle.kts`·`requirements*.txt`·`pyproject.toml`의 `spring-boot`(`org.springframework.boot`) `ktor-server` `django` `fastapi` `flask`, `go.mod`의 `gin-gonic` `echo` `fiber` `go-chi` `gorilla/mux` `swaggo`(또는 `main.go`가 `net/http`로 `ListenAndServe`를 부를 때), `Cargo.toml`의 `axum` `actix-web` `rocket`, `Package.swift`의 `vapor`, `package.json`의 `express` `koa` `fastify` `@hapi/hapi` |
 | 앱 레포 | `**/src/main/AndroidManifest.xml`·`**/src/androidMain/AndroidManifest.xml`(모듈명 무관 — KMP는 `androidApp/`, `composeApp/`을 쓴다), `Podfile` `*.xcodeproj`, `Project.swift` `Workspace.swift`(Tuist) |
-| 실행 스크립트 있음 | `package.json` 의 `scripts`, `gradlew`, `pubspec.yaml`(Flutter), `docker-compose*.yml`·`*.yaml`, `compose.yaml`, 루트 `Makefile` |
-| API 문서 있음 | `springdoc` `swagger` `@nestjs/swagger` `drf-spectacular` `drf-yasg` `swaggo` `utoipa` 의존성(버전 카탈로그 포함), `docs/swagger.json`, 또는 `fastapi`(OpenAPI 내장) |
+| 실행 스크립트 있음 | `package.json` 의 `scripts`, `gradlew`, `pubspec.yaml`(Flutter), `manage.py`(Django), `docker-compose*.yml`·`*.yaml`, `compose.yaml`, `Makefile` |
+| API 문서 있음 | `springdoc` `swagger` `@nestjs/swagger` `drf-spectacular` `drf-yasg` `swaggo` `utoipa` 의존성(버전 카탈로그 포함), `docs/**/swagger.json`·`openapi.{yaml,json}`, 또는 `fastapi`(OpenAPI 내장) |
 | CI 있음 | `.github/workflows/*.yml` · `*.yaml` |
 
 **파일 이름만으로 판정하지 않는다.** 안드로이드 프로젝트도 루트에 `build.gradle(.kts)`를 두므로
