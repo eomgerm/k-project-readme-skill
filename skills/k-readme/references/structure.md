@@ -254,9 +254,14 @@
 ```
 ~~~
 
-`{환경변수 설정 명령}`은 저장소가 실제로 가진 파일로 쓴다 — `.env.example`이 있으면
-`cp .env.example .env`, 스프링은 `application-local.yml`, 안드로이드는 `local.properties`,
-iOS는 `.xcconfig`. 해당 파일이 없으면 이 단계를 빼고 번호를 다시 매긴다.
+`{환경변수 설정 명령}`은 **커밋된 템플릿**을 근거로 쓴다 — `.env.example`
+`local.properties.example` 같은 게 있으면 `cp {템플릿} {대상}`, 커밋된 `application-local.yml`이나
+`.xcconfig`가 있으면 그 파일명을 적는다.
+
+템플릿이 없어도 **단계를 빼지 않는다.** 코드가 실제로 읽는 키 이름(`process.env.*`,
+`BuildConfig`, `@Value`)을 찾아 주석으로 나열한다 — `local.properties`처럼 gitignore되는 파일은
+저장소에 없는 게 정상이지 필요 없다는 뜻이 아니다. 읽는 키가 하나도 없을 때만 단계를 빼고
+번호를 다시 매긴다.
 
 확인할 주소가 여러 개면 표로 잇는다. R2가 켜져 있으면 API 문서 주소도 여기 넣는다.
 
