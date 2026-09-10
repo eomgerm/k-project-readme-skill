@@ -123,9 +123,9 @@ Kotlin은 서버 표에 있다. 안드로이드 라이브러리는 로고가 없
    로고 없는 뱃지로 렌더되기 때문에 커밋 전에 잡히지 않는다.
 3. 색을 모르면 무채색(`000000`, `555555`)으로 간다. 브랜드 색을 틀리는 것보다 낫다.
 
-**AWS·Amazon 계열과 Slack은 shields.io가 로고를 렌더하지 않는다.** simple-icons 패키지에는
-파일이 있지만 `logo=amazonaws`, `logo=amazonwebservices`, `logo=slack` 은 오류 없이 무시된다
-(응답이 로고 없는 뱃지와 바이트 단위로 동일하다). 이 셋은 반드시 색만 쓴다.
+**AWS·Amazon 계열과 Slack은 shields.io가 로고를 렌더하지 않는다.** `logo=amazonaws`,
+`logo=amazonwebservices`, `logo=slack` 은 오류 없이 무시된다 — 응답이 로고 없는 뱃지와 바이트
+단위로 동일하다. 이 셋은 반드시 색만 쓴다.
 
 ## 배치
 
