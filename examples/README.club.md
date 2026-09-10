@@ -74,13 +74,15 @@ git clone https://github.com/eomgerm/weather-badge.git && cd weather-badge
 # 2. 의존성 설치
 npm install
 
-# 3. 환경변수 설정 — .env.local
-# WEATHER_API_KEY=your_openweather_key
-# NEXT_PUBLIC_MAPS_API_KEY=your_google_maps_key
+# 3. 환경변수 설정 — .env.local 을 만들고 아래 두 키를 채웁니다
+# WEATHER_API_KEY=
+# NEXT_PUBLIC_MAPS_API_KEY=
 
 # 4. 개발 서버 실행
 npm run dev
 ```
+
+실행하면 `http://localhost:3000` 에서 확인할 수 있어요.
 
 ## 👤 만든 사람
 

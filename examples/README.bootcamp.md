@@ -11,7 +11,8 @@
 ## ☁️ 날씨 API 응답을 배지 한 장으로
 
 Weather Badge는 도시와 크기를 입력받아 현재 날씨, 체감 온도, 풍속과 대기질을 SVG로 조합합니다.
-서비스는 [weather-badge.vercel.app](https://weather-badge.vercel.app/) 에 배포돼 있습니다.
+서비스는 [weather-badge.vercel.app](https://weather-badge.vercel.app/) 에 배포돼 있고,
+코드는 [eomgerm/weather-badge](https://github.com/eomgerm/weather-badge) 에 있습니다.
 
 - GitHub README와 Notion에서는 생성된 URL만 이미지로 붙이면 됩니다.
 - 아이콘까지 SVG 안에 담겨 있어 배지 주소 하나로 렌더링이 끝납니다.
@@ -92,15 +93,6 @@ GitHub·Notion·Web ← SVG 조합 ← /api/badge → Weather API
 └── utils                  # 쿼리 문자열과 날씨 아이콘 매핑
 ```
 
-## 🌤 주요 기능
-
-| 기능 | 설명 |
-| --- | --- |
-| 도시 자동완성 | 영문 도시명을 검색하고 최대 10개 위치 후보 중 하나를 선택합니다. |
-| SVG 생성 | 날씨·체감 온도·풍속·대기질과 애니메이션 아이콘을 한 장에 담습니다. |
-| 크기 조절 | 쿼리의 `size` 값으로 배지 크기를 바꿉니다. |
-| 코드 복사 | SVG URL, HTML, Markdown 형식을 바로 확인합니다. |
-
 ## 📦 실행 방법
 
 **사전 준비**: Node.js 16 이상, OpenWeather·Google Maps API 키
@@ -112,13 +104,24 @@ git clone https://github.com/eomgerm/weather-badge.git && cd weather-badge
 # 2. 의존성 설치
 npm install
 
-# 3. 환경변수 설정 — .env.local
-# WEATHER_API_KEY=your_openweather_key
-# NEXT_PUBLIC_MAPS_API_KEY=your_google_maps_key
+# 3. 환경변수 설정 — .env.local 을 만들고 아래 두 키를 채웁니다
+# WEATHER_API_KEY=
+# NEXT_PUBLIC_MAPS_API_KEY=
 
 # 4. 개발 서버 실행
 npm run dev
 ```
+
+실행하면 `http://localhost:3000` 에서 확인할 수 있습니다.
+
+## 🌤 주요 기능
+
+| 기능 | 설명 |
+| --- | --- |
+| 도시 자동완성 | 영문 도시명을 검색하고 최대 10개 위치 후보 중 하나를 선택합니다. |
+| SVG 생성 | 날씨·체감 온도·풍속·대기질과 애니메이션 아이콘을 한 장에 담습니다. |
+| 크기 조절 | 쿼리의 `size` 값으로 배지 크기를 바꿉니다. |
+| 코드 복사 | SVG URL, HTML, Markdown 형식을 바로 확인합니다. |
 
 ## 👤 만든 사람
 
