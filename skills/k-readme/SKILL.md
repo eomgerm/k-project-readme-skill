@@ -43,8 +43,8 @@ license: MIT
 | 조건 | 판정 근거 |
 | --- | --- |
 | 서버 레포 | `pom.xml` `nest-cli.json` `manage.py`, 또는 매니페스트 안의 서버 프레임워크 의존성 — `build.gradle(.kts)`·`gradle/libs.versions.toml`·`buildSrc/**/*.gradle.kts`·`requirements*.txt`·`pyproject.toml`의 `spring-boot`(`org.springframework.boot`) `ktor-server` `django` `fastapi` `flask`, `go.mod`의 `gin-gonic` `echo` `fiber` `go-chi` `gorilla/mux` `swaggo`(또는 `main.go`가 `net/http`로 `ListenAndServe`를 부를 때), `Cargo.toml`의 `axum` `actix-web` `rocket`, `Package.swift`의 `vapor`, `package.json`의 `express` `koa` `fastify` `@hapi/hapi` — 단 같은 `package.json`에 `next` `react-dom` `vue`가 함께 있으면 정적·SSR 호스트이므로 서버로 치지 않는다 |
-| 앱 레포 | `**/src/main/AndroidManifest.xml`·`**/src/androidMain/AndroidManifest.xml`(모듈명 무관 — KMP는 `androidApp/`, `composeApp/`을 쓴다), `Podfile` `*.xcodeproj`, `Project.swift` `Workspace.swift`(Tuist) |
-| 실행 스크립트 있음 | `package.json` 의 `scripts`, `gradlew`, `pubspec.yaml`(Flutter), `manage.py`(Django), `docker-compose*.yml`·`*.yaml`, `compose.yaml`, `Makefile` |
+| 앱 레포 | `**/src/main/AndroidManifest.xml`·`**/src/androidMain/AndroidManifest.xml`(모듈명 무관 — KMP는 `androidApp/`, `composeApp/`을 쓴다), `Podfile` `*.xcodeproj`, `Project.swift` `Workspace.swift`(Tuist), `app.json`·`app.config.{js,ts}`의 `expo` 키 또는 `eas.json`(Expo는 android/ios를 prebuild로 만들고 커밋하지 않는다) |
+| 실행할 수 있음 | **서버 레포이거나 앱 레포면 항상.** 그 밖에는 `package.json` 의 `scripts`, `gradlew`, `pubspec.yaml`, `manage.py`, `docker-compose*.yml`·`*.yaml`, `compose.yaml`, `Makefile` 중 하나. 마커는 켤지 말지가 아니라 **어떤 명령을 적을지** 고르는 데 쓴다 |
 | API 문서 있음 | **서버 레포일 때만.** `springdoc` `springfox` `spring-restdocs` `swagger-ui-express` `swagger-jsdoc` `@nestjs/swagger` `ktor-server-swagger` `ktor-server-openapi` `drf-spectacular` `drf-yasg` `flasgger` `swaggo` `utoipa` 의존성(버전 카탈로그 포함), `docs/**/swagger.json`·`openapi.{yaml,json}`·`**/openapi/*.{yaml,json}`·`src/docs/asciidoc/**/*.adoc`, 또는 `fastapi`(OpenAPI 내장). `swagger-typescript-api` `openapi-typescript` `openapi-fetch` `orval` `openapi3-ts`는 프런트 코드 생성 도구라 근거가 아니다 |
 | CI 있음 | `.github/workflows/*.yml` · `*.yaml` |
 
@@ -107,7 +107,7 @@ gh issue list --state closed --limit 30 --json number,title,body
 | | A1 아키텍처 | 항상 (동아리형은 선택) |
 | | A3 폴더 트리 | 부트캠프형 (동아리형은 생략) |
 | | A4 ERD | 서버 레포 |
-| | R1 실행 방법 | 실행 스크립트 있음 |
+| | R1 실행 방법 | 실행할 수 있음 |
 | | R2 API 명세 | API 문서 있음 |
 | **L4 사람·규칙** | P1 팀원 | 항상 |
 | | C1 컨벤션 | 실제로 지킨 규칙이 있을 때 |
